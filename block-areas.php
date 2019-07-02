@@ -37,6 +37,7 @@ function block_areas() {
  * Loads the plugin.
  *
  * @since 0.1.0
+ * @access private
  */
 function block_areas_load() {
 	if ( version_compare( phpversion(), '7.0', '<' ) ) {
@@ -49,17 +50,52 @@ function block_areas_load() {
 		return;
 	}
 
-	if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-		require __DIR__ . '/vendor/autoload.php';
+	// Load Composer autoloader or custom autoloader.
+	if ( ! class_exists( 'WP_Rig\\Block_Areas\\Plugin' ) ) {
+		if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+			require __DIR__ . '/vendor/autoload.php';
+		} else {
+			spl_autoload_register( 'block_areas_autoload' );
+		}
 	}
 
 	call_user_func( [ 'WP_Rig\\Block_Areas\\Plugin', 'load' ], __FILE__ );
 }
 
 /**
+ * Custom autoloader function for plugin classes.
+ *
+ * Simplified autoloader that respects PSR-4 specific to the plugin.
+ *
+ * @since 1.0.0
+ * @access private
+ *
+ * @param string $class_name Class name to load.
+ * @return bool True if the class was loaded, false otherwise.
+ */
+function block_areas_autoload( $class_name ) {
+	$namespace = 'WP_Rig\Block_Areas';
+	if ( strpos( $class_name, $namespace . '\\' ) !== 0 ) {
+		return false;
+	}
+	$parts = explode( '\\', substr( $class_name, strlen( $namespace . '\\' ) ) );
+	$path = plugin_dir_path( __FILE__ ) . 'src';
+	foreach ( $parts as $part ) {
+		$path .= '/' . $part;
+	}
+	$path .= '.php';
+	if ( ! file_exists( $path ) ) {
+		return false;
+	}
+	require_once $path;
+	return true;
+}
+
+/**
  * Displays an admin notice about an unmet PHP version requirement.
  *
  * @since 0.1.0
+ * @access private
  */
 function block_areas_display_php_version_notice() {
 	?>
@@ -82,6 +118,7 @@ function block_areas_display_php_version_notice() {
  * Displays an admin notice about an unmet WordPress version requirement.
  *
  * @since 0.1.0
+ * @access private
  */
 function block_areas_display_wp_version_notice() {
 	?>
