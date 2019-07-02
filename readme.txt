@@ -4,7 +4,7 @@ Contributors:      felixarntz
 Requires at least: 5.0
 Tested up to:      5.2
 Requires PHP:      7.0
-Stable tag:        1.0.0
+Stable tag:        0.1.0
 License:           GNU General Public License v2 (or later)
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              wprig, gutenberg, blocks, editor, theming
@@ -48,6 +48,6 @@ You can also contribute to the plugin by translating it. Simply visit [translate
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.1.0 =
 
 * Initial release

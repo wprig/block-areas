@@ -14,14 +14,14 @@ use WP_Post;
 /**
  * Class providing the block areas API.
  *
- * @since 1.0.0
+ * @since 0.1.0
  */
 class Block_Areas {
 
 	/**
 	 * Renders the block area with the given slug.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @global WP_Post $post Current WordPress post object.
 	 *
@@ -68,7 +68,7 @@ class Block_Areas {
 	/**
 	 * Checks whether the block area with the given slug exists.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $slug Block area slug.
 	 * @return bool True if the block area exists, false otherwise.
@@ -81,7 +81,7 @@ class Block_Areas {
 	/**
 	 * Gets a block area ID by its slug.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $slug Block area slug.
 	 * @return int Block area ID, or 0 if not found.

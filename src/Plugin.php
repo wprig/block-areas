@@ -12,14 +12,14 @@ namespace WP_Rig\Block_Areas;
 /**
  * Main class for the plugin.
  *
- * @since 1.0.0
+ * @since 0.1.0
  */
 class Plugin {
 
 	/**
 	 * Absolute path to the plugin main file.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 * @var string
 	 */
 	protected $main_file;
@@ -27,7 +27,7 @@ class Plugin {
 	/**
 	 * Block areas API instance.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 * @var Block_Areas
 	 */
 	protected $block_areas;
@@ -35,7 +35,7 @@ class Plugin {
 	/**
 	 * Main instance of the plugin.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 * @var Plugin|null
 	 */
 	protected static $instance = null;
@@ -45,7 +45,7 @@ class Plugin {
 	 *
 	 * Sets the plugin main file.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $main_file Absolute path to the plugin main file.
 	 */
@@ -57,7 +57,7 @@ class Plugin {
 	/**
 	 * Gets the block areas API instance.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @return Block_Areas
 	 */
@@ -68,7 +68,7 @@ class Plugin {
 	/**
 	 * Registers the plugin with WordPress.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	public function register() {
 		( new Block_Areas_Post_Type() )->register();
@@ -78,7 +78,7 @@ class Plugin {
 	/**
 	 * Gets the plugin basename, which consists of the plugin directory name and main file name.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @return string Plugin basename.
 	 */
@@ -89,7 +89,7 @@ class Plugin {
 	/**
 	 * Gets the absolute path for a path relative to the plugin directory.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $relative_path Optional. Relative path. Default '/'.
 	 * @return string Absolute path.
@@ -101,7 +101,7 @@ class Plugin {
 	/**
 	 * Gets the full URL for a path relative to the plugin directory.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $relative_path Optional. Relative path. Default '/'.
 	 * @return string Full URL.
@@ -113,7 +113,7 @@ class Plugin {
 	/**
 	 * Retrieves the main instance of the plugin.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @return Plugin Plugin main instance.
 	 */
@@ -124,7 +124,7 @@ class Plugin {
 	/**
 	 * Loads the plugin main instance and initializes it.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $main_file Absolute path to the plugin main file.
 	 * @return bool True if the plugin main instance could be loaded, false otherwise.

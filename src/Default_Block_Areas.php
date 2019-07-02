@@ -12,7 +12,7 @@ namespace WP_Rig\Block_Areas;
 /**
  * Class managing the default block areas.
  *
- * @since 1.0.0
+ * @since 0.1.0
  */
 class Default_Block_Areas {
 
@@ -21,7 +21,7 @@ class Default_Block_Areas {
 	/**
 	 * Block areas API instance.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 * @var Block_Areas
 	 */
 	protected $block_areas;
@@ -29,7 +29,7 @@ class Default_Block_Areas {
 	/**
 	 * Constructor.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param Block_Areas $block_areas Block areas API instance.
 	 */
@@ -40,7 +40,7 @@ class Default_Block_Areas {
 	/**
 	 * Registers WordPress hooks to initialize.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	public function register() {
 		add_action(
@@ -60,7 +60,7 @@ class Default_Block_Areas {
 	 *
 	 * This includes a block area 'header' and 'footer'.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	private function create_defaults() {
 		$defaults = array();

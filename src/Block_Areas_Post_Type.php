@@ -12,7 +12,7 @@ namespace WP_Rig\Block_Areas;
 /**
  * Class managing the block areas post type.
  *
- * @since 1.0.0
+ * @since 0.1.0
  */
 class Block_Areas_Post_Type {
 
@@ -21,7 +21,7 @@ class Block_Areas_Post_Type {
 	/**
 	 * Registers WordPress hooks to initialize.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	public function register() {
 		add_action(
@@ -78,7 +78,7 @@ class Block_Areas_Post_Type {
 	/**
 	 * Registers the block areas post type.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	private function register_post_type() {
 		$labels = array(
@@ -132,7 +132,7 @@ class Block_Areas_Post_Type {
 	 * Filters the capabilities of a user to conditionally grant them capabilities for managing block areas.
 	 *
 	 * Any user who can 'edit_theme_options' will have access to manage block areas.
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param array $allcaps A user's capabilities.
 	 * @return array Filtered $allcaps.
@@ -157,7 +157,7 @@ class Block_Areas_Post_Type {
 	/**
 	 * Fixes the label of the block areas admin menu entry.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	private function fix_admin_menu_entry() {
 		global $submenu;
@@ -178,7 +178,7 @@ class Block_Areas_Post_Type {
 	/**
 	 * Filters the block area post type columns in the admin list table.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param array $columns Columns to display.
 	 * @return array Filtered $columns.
@@ -194,7 +194,7 @@ class Block_Areas_Post_Type {
 	/**
 	 * Renders column content for the block area post type list table.
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 *
 	 * @param string $column_name Column name to render.
 	 * @param int    $post_id     Post ID.
