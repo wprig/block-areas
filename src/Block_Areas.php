@@ -55,7 +55,10 @@ class Block_Areas {
 		// Set up block area and render its content.
 		$post = get_post( $id );
 		setup_postdata( $post );
+
+		echo $args['before']; // phpcs:ignore WordPress.Security.EscapeOutput
 		the_content();
+		echo $args['after']; // phpcs:ignore WordPress.Security.EscapeOutput
 
 		// Restore original post.
 		$post = $orig_post;
