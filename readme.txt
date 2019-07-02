@@ -17,6 +17,8 @@ Introduces a simple method for defining block areas to use the block editor outs
 
 This is an experimental plugin that explores basic usage of Gutenberg blocks outside of the content bubble, on a sitewide level.
 
+In the long term it will likely eliminate itself once WordPress core and Gutenberg will have completed the next phase of advancing to the sitewide level. The plugin exists as a baseline to have an easy way for experimenting with similar functionality already today.
+
 = Usage =
 
 After activating the plugin, you can create and edit block areas under *Appearance > Block Areas*. There should be two block areas already, `header` and `footer`.
