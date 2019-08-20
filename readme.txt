@@ -4,7 +4,7 @@ Contributors:      felixarntz
 Requires at least: 5.0
 Tested up to:      5.2
 Requires PHP:      7.0
-Stable tag:        0.1.0
+Stable tag:        0.2.0
 License:           GNU General Public License v2 (or later)
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              wprig, gutenberg, blocks, editor, theming
@@ -26,6 +26,8 @@ After activating the plugin, you can create and edit block areas under *Appearan
 Block areas are identified by their unique slug. Since `header` and `footer` are expected to exist, make sure not to delete them.
 
 In order to print a specific block area, for example in your theme, use `block_areas()->render( $slug )` (e.g. `block_areas()->render( 'header' )`).
+
+You can also explicitly add theme support, specifying which block area slugs your theme relies on (e.g. `add_theme_support( 'block-areas', 'header', 'footer' )`).
 
 == Installation ==
 
@@ -49,6 +51,10 @@ You can also contribute to the plugin by translating it. Simply visit [translate
 1. Block areas admin screen
 
 == Changelog ==
+
+= 0.2.0 =
+
+* Allow themes to explicitly add `block-areas` theme support and specify which areas they use.
 
 = 0.1.0 =
 

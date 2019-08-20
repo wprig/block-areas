@@ -10,7 +10,7 @@
  * Plugin Name: Block Areas
  * Plugin URI:  https://wordpress.org/plugins/block-areas
  * Description: Introduces a simple method for defining block areas to use the block editor outside of the post content.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      The WP Rig Contributors
  * Author URI:  https://github.com/wprig
  * License:     GNU General Public License v2 (or later)
