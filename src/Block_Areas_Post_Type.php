@@ -64,9 +64,26 @@ class Block_Areas_Post_Type {
 			"views_edit-{$slug}",
 			function( $views ) {
 				echo '<p class="description">';
-				echo wp_kses(
+				if ( current_theme_supports( 'block-areas' ) ) {
+					$theme_support = get_theme_support( 'block-areas' );
+					if ( is_array( $theme_support ) && isset( $theme_support[0] ) && is_string( $theme_support[0] ) ) {
+						$theme_support = array_map(
+							function( $slug ) {
+								return '<code>' . $slug . '</code>';
+							},
+							$theme_support
+						);
+						/* translators: %s: comma-separated list of slugs */
+						$message = sprintf( __( 'Your theme supports block areas with the following slugs: %s', 'block-areas' ), implode( ', ', $theme_support ) );
+					} else {
+						$message = __( 'Your theme supports block areas.', 'block-areas' );
+					}
+				} else {
 					/* translators: %s: command */
-					sprintf( __( 'You can render these block areas in your theme using %s.', 'block-areas' ), '<code>block_areas()->render( $slug )</code>' ),
+					$message = sprintf( __( 'You can render these block areas in your theme using %s.', 'block-areas' ), '<code>block_areas()->render( $slug )</code>' );
+				}
+				echo wp_kses(
+					$message,
 					array( 'code' => array() )
 				);
 				echo '</p>';
