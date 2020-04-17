@@ -142,7 +142,9 @@ class Block_Areas_Post_Type {
 			),
 		);
 
-		register_post_type( self::SLUG, $args );
+		$args = apply_filters('block_areas/post_type_args', $args);
+
+		register_post_type(self::SLUG, $args);
 	}
 
 	/**
